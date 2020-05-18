@@ -1,15 +1,3 @@
-%
-%   Prof. Dr. Julian Reichwald
-%   auf Basis einer Vorlage von Prof. Dr. Jörg Baumgart
-%   DHBW Mannheim
-%
-%
-%	ACHTUNG: Für das Erstellen des Literaturverzeichnisses wird das modernere Paket biblatex
-%			 in Kombination mit biber verwendet -- nicht mehr das ältere BibTex!
-% 			 Bitte stellen Sie ggf. Ihre TeX-Umgebung
-% 			 entsprechend ein (z.B. TeXStudio: Einstellungen --> Erzeugen --> Standard Bibliographieprogramm: biber)
-%
-
 \documentclass[
 	12pt,
 	BCOR=5mm,
@@ -23,7 +11,6 @@
 	pointlessnumbers,
 	plainfootsepline]{scrreprt}
 
-%	Konfigurationsdatei einziehen
 \input{config}
 
 \begin{document}
@@ -31,10 +18,8 @@
 %% BITTE GEBEN SIE HIER DEN TITEL UND DIE AUTORIN / DEN AUTOR DER ARBEIT AN!
 %% DIESE INFORMATIONEN _MÜSSEN_ GESETZT SEIN, UM TITELBLATT, ABSTRACT UND
 %% EIGENSTÄNDIGKEITSERKLÄRUNG AUTOMATISCH ANZUPASSEN!
-\TitelDerArbeit{Entwurf und Implementierung eines verteilten, direkten Suchverfahrens}
-\AutorDerArbeit{Erika Musterfrau}
-\Firma{Musterbetrieb AG}
-\Kurs{WWI14SEA}
+\TitelDerArbeit{Projekt ExoPlan: Entwicklung eines Vorlesungsverwaltungstools}
+\AutorDerArbeit{Kurs WWI 17 SE B}
 
 \input{titlepage}
 
@@ -45,30 +30,18 @@
 % Verzeichnisse - nicht benötige Verzeichnisse bitte auskommentieren / löschen.
 %--------------------------------
 
-%	Kurzfassung
-\pdfbookmark{Kurzfassung}{kurzfassung-bookmark}
-\input{abstract}
-
 %	Inhaltsverzeichnis
-\clearpage
-\pdfbookmark{Inhaltsverzeichnis}{toc-bookmark}
-\tableofcontents
+    \tableofcontents
 
-%	Abbildungsverzeichnis
-\listoffigures
-
-%	Tabellenverzeichnis
-\listoftables
-
-%	Listingsverzeichnis
- \lstlistoflistings
-
-% 	Algorithmenverzeichnis
-\listofalgorithms
+% %	Abbildungsverzeichnis
+% \listoffigures
+% \listoftables
+% \lstlistoflistings
+% \listofalgorithms
 
 % 	Abkürzungsverzeichnis (siehe Datei acronyms.tex!)
 \input{acronyms}
-\ohead{Abkürzungsverzeichnis} % Neue Header-Definition
+\ohead{Acronyms} % Neue Header-Definition
 
 %--------------------------------
 % Start des Textteils der Arbeit
@@ -78,27 +51,25 @@
 \ohead{\headmark} % Neue Header-Definition (outer header)
 \pagenumbering{arabic}  % Arabische Seitenzahlen
 
-%	Anleitungs-Datei anleitung.tex einziehen. Auf diese Weise sollten Sie versuchen, für jedes einzelne
-% Kapitel eine eigene Datei anzulegen und mittels input-Kommando einzuziehen.
-\input{anleitung}
+\input{tex/Einleitung}
+\input{tex/Projektmanagement/_Projektmanagement.tex}
+\input{tex/Anforderungsmanagement/_Anforderungsmanagement.tex}
+\input{tex/Entwurf/_Entwurf.tex}
+\input{tex/Umsetzung/_Umsetzung}
+\input{tex/UserGuide/_UserGuide.tex}
+\input{tex/Evaluation/_Evaluation.tex}
+\input{tex/Ausblick}
+
 
 %	Literaturverzeichnis
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{8000}
-\clearpage
-\ihead{}
-\printbibliography[title=Literaturverzeichnis]
-\cleardoublepage
+% \printbibliography[title=Literaturverzeichnis]
+% \cleardoublepage
 
 % Der Anhang beginnt hier - jedes Kapitel wird alphabetisch aufgezählt. (Anhang A, B usw.)
-\appendix
-\ihead{\appendixname~\thechapter} % Neue Header-Definition
+% \appendix
+% \ihead{\appendixname~\thechapter} % Neue Header-Definition
 
 % appendix.tex einziehen
-\input{appendix}
-
-% Ehrenwörtliche Erklärung ewerkl.tex einziehen
-\input{ewerkl.tex}
-
+% \input{appendix}
 
 \end{document}
