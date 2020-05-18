@@ -45,13 +45,13 @@
 % Verzeichnisse - nicht benötige Verzeichnisse bitte auskommentieren / löschen.
 %--------------------------------
 
-%   Sperrvermerk
-\input{nondisclosurenotice}
-
 %	Kurzfassung
+\pdfbookmark{Kurzfassung}{kurzfassung-bookmark}
 \input{abstract}
 
 %	Inhaltsverzeichnis
+\clearpage
+\pdfbookmark{Inhaltsverzeichnis}{toc-bookmark}
 \tableofcontents
 
 %	Abbildungsverzeichnis
@@ -68,7 +68,7 @@
 
 % 	Abkürzungsverzeichnis (siehe Datei acronyms.tex!)
 \input{acronyms}
-\ohead{Acronyms} % Neue Header-Definition
+\ohead{Abkürzungsverzeichnis} % Neue Header-Definition
 
 %--------------------------------
 % Start des Textteils der Arbeit
@@ -83,6 +83,8 @@
 \input{anleitung}
 
 %	Literaturverzeichnis
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 \clearpage
 \ihead{}
 \printbibliography[title=Literaturverzeichnis]
