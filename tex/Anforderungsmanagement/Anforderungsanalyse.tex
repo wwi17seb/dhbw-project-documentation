@@ -1,8 +1,103 @@
-\section{Anforderungsanalyse}
+\chapter{Anforderungsanalyse}
 
-\includegraphics[width=\textwidth]{img/Uebersicht_Anforderungen.png}
-    % Link: https://www.isst.fraunhofer.de/content/dam/isst/de/documents/Publikationen/StudienundWhitePaper/Whitepaper_Anforderungsmanagement-fuer-Geschaeftsanwendungen.pdf
+In diesem Kapitel wird die Anforderungsanalyse erstellt. Zunächst wird die zu lösende
+Problemstellung sowie die Zielsetzung des Projekts beschrieben. Anschließend werden die Anforderungen des Auftraggebers identifiziert. Alle Anforderungen werden danach anhand ihrer Relevanz und dem gegebenen zeitlichen Budget priorisiert.
 
-\subsection{Funktionale Anforderungen}
 
-\subsection{Technische Anforderungen}
+\section{Problemstellung und Zielsetzung}\label{sec:probl}
+
+Die Vorlesungspläne für die Kurse des Studiengangs Wirtschaftsinformatik an der DHBW müssen aktuell vollständig manuell durch die jeweiligen Tutoren erstellt werden. Eine Excel-Vorlage dient dabei als Unterstützung, indem darin Informationen über den Kurs und die Module gesammelt werden. Für die zu haltenden Vorlesungen müssen passende Dozenten gesucht und angefragt werden, wobei keine zentrale Liste der Dozenten existiert, was den Prozess wiederum erschwert. Wurden zu allen Vorlesungen passende Dozenten sowie Zeitfenster gefunden, werden diese in einem Google Calendar integriert. \\
+
+Mit Hilfe eines Tools soll künftig das eben beschriebene Vorgehen zur Erstellung der Vorlesungspläne mit seinen manuellen Teilprozessen für die Studiengangsleiter erleichtert werden. Ziel dabei ist es, eine zentrale Dozentenverwaltung zu realisieren sowie den Studiengangsleitern ein einheitliches System zur Planung und Koordination ihrer Kurse zur Verfügung zu stellen.
+
+
+\section{Anforderungen}
+
+Bevor der Lösungsansatz für die Problemstellung aus Kapitel \vref{sec:probl} konzipiert wird, müssen die Wünsche und Vorstellungen des Auftraggebers ermittelt werden. Bei dem Auftraggeber handelt es sich um einen Studiengangsleiter   des Studiengangs Wirtschaftsinformatik an der DHBW. Durch verschiedene Interviews wurden die Anforderungen des Auftraggebers festgestellt. Die Anforderungen sind in Tabelle \vref{tab:Anforderungen} aufgelistet. 
+\begin{longtable}[h]{|p{2,5cm}|p{4cm}|p{6,5cm}|}		
+	\multicolumn{3}{|r|}{\textit{Fortsetzung nächste Seite}} \\ \hline
+	\endfoot
+	\endlastfoot
+	\hline &&\\[-0.5em]
+	\textbf{Anforderung} & \head{Kurztitel} & \head{Beschreibung} \\ \hline
+	\endfirsthead
+	\hline &&\\[-0.5em]
+	\textbf{Anforderung} & \head{Kurztitel} & \head{Beschreibung} \\ \hline
+	\endhead
+	\parbox[t]{3cm}{A1} & Dozentenpool & Alle Dozenten sollen in einem zentralen Dozentenpool verwaltet werden können.\\ \hline
+	\parbox[t]{3cm}{A2} & Stundenplan & Die Software soll Stundenpläne verwalten und erzeugen anhand diverser Parameter, die eingetragen werden wie z.\,B. welche Vorlesungen in welchem Semester für einen Kurs und Dozenten stattfinden.\\ \hline
+	\parbox[t]{3cm}{A3} & Google Calendar & Google Calendar soll vollständig in die Software integriert werden.\\ \hline
+	\parbox[t]{3cm}{A4} & Profilzuordnung & Die Profile der User, mit denen sie sich am System anmelden, sollen über deren  Mail-Adresse zugeordnet werden.\\ \hline
+	\parbox[t]{3cm}{A5} & Modulkataloge & Die Modulkataloge mit den Vorlesungen, Stundenanzahlen und Prüfungsmöglichkeiten (Klausur, Referat oder andere Ausarbeitungen) sollen verwaltet und über Templates hinzugefügt werden können.\\ \hline
+	\parbox[t]{3cm}{A6} & Kurskoordination & Ein Studiengangsleiter soll eine variable Anzahl an Kursen im System koordinieren können.\\ \hline
+	\parbox[t]{3cm}{A7} & Eindeutigkeit der Module & Module müssen eindeutig identifizierbar sein, da z.\,B. das Statistikmodul für Wirtschaftsinformatiker nicht gleich dem Statistikmodul für angewandte Informatiker ist.\\ \hline
+	\parbox[t]{3cm}{A8} & Suchen und Filtern im Dozentenpool & In dem Dozentenpool sollen Dozenten per Suche gefunden sowie nach sinnvollen Kriterien gefiltert werden können.\\ \hline
+	\parbox[t]{3cm}{A9} & Hinzufügen und Löschen im Dozentenpool & In dem Dozentenpool sollen neue Dozenten hinzugefügt und bestehende Dozenten gelöscht werden können.\\ \hline
+	\parbox[t]{3cm}{A10} & Dozenteninformationen im Dozentenpool & Zu jedem Dozenten im Dozentenpool sollen Informationen wie Name, Mail, Handynummer verfügbar sein. Zudem sollen Felder für eine Bewertung, eine Information, ob der Dozent hauptamtlich tätig ist und der/die jeweilige(n) Schwerpunkt(e) sowie ein Freitextfeld für Kommentare vorhanden sein.\\ \hline
+	\parbox[t]{3cm}{A11} & Automatisierte Dozentenanfrage & Nach Auswahl eines Dozenten soll diesem automatische eine Anfrage via Mail geschickt werden, wobei ein personalisierbares Template als Basis dient.\\ \hline
+	\parbox[t]{3cm}{A12} & Zuordnung der Dozenten & Die Dozenten sollen jeweils einem Studiengangsleiter zugeordnet werden.\\ \hline
+	\parbox[t]{3cm}{A13} & Warnung bei maximaler Studenanzahl & Das Tool soll benachrichtigen, wenn ein Dozent seine maximale Stundenanzahl überschreiten würde bei der aktuellen Planung.\\ \hline
+	\parbox[t]{3cm}{A14} & Paralleler Zugriff & Parallele Zugriffe auf einen Kurs durch jeweils berechtigte Personen sollen möglich sein.\\ \hline
+	\parbox[t]{3cm}{A15} & Tooladministration & Die Administration des Tools soll über die Studiengangsleiter erfolgen.\\ \hline
+	\parbox[t]{3cm}{A16} & Kursübersicht & Es soll pro Kurs eine Übersicht mit Anzahl und Art der jeweiligen Prüfungsleistungen des Kurses existieren.\\ \hline
+	\parbox[t]{3cm}{A17} & Farbiger Planungsstand & Der aktuelle Stand der Semesterplanung eines Kurses soll mithilfe von Farben verdeutlicht werden, z.\,B. grün – Termin der Vorlesung ist fix; gelb – Dozent hat zugesagt, aber noch kein fixer Termin; etc.\\ \hline
+	\parbox[t]{3cm}{A18} & Planungsexport & Existierende Planungen sollen exportiert werden können, z.\,B. für nachfolgende Kurse.\\ \hline
+	\parbox[t]{3cm}{A19} & Informationen der Veranstaltungen & Die detaillierten Informationen über die Veranstaltungen eines geplantes Kurses sollen mithilfe von angehängten Dokumenten einsehbar sein.\\ \hline
+	\parbox[t]{3cm}{A20} & Veranstaltungstitel & Der Titel einer Veranstaltung soll in folgender Form dargestellt werden: \enquote{Name der Veranstaltung - Name des Dozenten}.\\ \hline
+	\parbox[t]{3cm}{A21} & Automatisierte Benachrichtigungen & Kurse und Dozenten werden mit einer automatisch generierten E-Mail über Semesterbeginn, die finalisierte Planung  oder die Festlegung von Prüfungsterminen und -arten benachrichtigt.\\ \hline
+	\parbox[t]{3cm}{A22} & Klausurenmaximum & Das Tool soll berücksichtigen, dass Studiengänge ab 2018  nur sechs schriftliche Klausuren pro Semester erlauben, indem eine entsprechende Warnung ausgegeben wird bei einer Überschreitung.\\ \hline
+	\parbox[t]{3cm}{A23} & Korrekte Moduldurchführung  & Die Anwendung soll berücksichtigen, dass Lehrveranstaltungen eines Moduls innerhalb eines Studienjahres erfolgen müssen. Innerhalb eines Studienjahres sollen die Lehrveranstaltungen beliebig verschoben werden können.\\ \hline
+	\parbox[t]{3cm}{A24} & Eintragung von Wahlmodulen & Wahlmodule sollen in den Modulkatalog eingetragen werden können.\\ \hline
+	\parbox[t]{3cm}{A25} & Dozentenvorschläge & Bei neu hinzugefügten Modulen sollen Vorschläge für den Dozenten generiert werden.\\ \hline
+	\parbox[t]{3cm}{A26} & Weiterführbarkeit & Die Software soll später von nachkommenden Jahrgängen weitergeführt und modifiziert werden können.\\ \hline
+	\parbox[t]{3cm}{A27} & Usability & Die Bedienbarkeit der Software soll so intuitiv und einfach wie möglich gestaltet werden.\\ \hline
+	
+	\captionsetup{format=hang}
+	\caption[Anforderungen des Auftraggebers]{\label{tab:Anforderungen}Anforderungen des Auftraggebers\\Quelle: Interview mit Professor Matt}
+\end{longtable}
+
+
+\section{Priorisierung}
+
+Die Anforderungen werden, um sie zu priorisieren, in zwei
+Kategorien eingeteilt. Als \textit{Muss} wird eine Anforderung kategorisiert, wenn sie die höchste Priorität hat. Eine Nicht-Erfüllung einer Anforderung, die mit einem \textit{Muss}-Kriterium versehen wurde, kann die Ablehnung des gesamten Projektes oder Produktes bedeuten. Die \textit{Kann}-Anforderungen sind Abstufungen der \textit{Muss}-Anforderungen und
+\enquote{können} erfüllt werden, soweit die Ressourcen dies ermöglichen. Die Anforderungen mit ihren jeweiligen Priorisierungen sind in Tabelle \vref{tab:prios}  dargestellt. 
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|p{8cm}|l|}
+		\hline &&\\[-0.5em]
+		\textbf{Anforderung} & \head{Kurztitel} & \textbf{Priorität} \\ \hline
+		A1 & Dozentenpool & \textit{Muss} \\ \hline
+		A2 & Stundenplan & \textit{Muss} \\ \hline
+		A3 & Google Calendar & \textit{Muss} \\ \hline
+		A4 & Profilzuordnung & \textit{Muss} \\ \hline
+		A5 & Modulkataloge & \textit{Muss} \\ \hline
+		A6 & Kurskoordination & \textit{Muss} \\ \hline
+		A7 & Eindeutigkeit der Module & \textit{Muss} \\ \hline
+		A8 & Suchen und Filtern im Dozentenpool & \textit{Muss} \\ \hline
+		A9 & Hinzufügen und Löschen im Dozentenpool & \textit{Muss} \\ \hline
+		A10 & Dozenteninformationen im Dozentenpool & \textit{Muss} \\ \hline
+		A11 & Automatisierte Dozentenanfrage & \textit{Kann} \\ \hline
+		A12 & Zuordnung der Dozenten & \textit{Kann} \\ \hline
+		A13 & Warnung bei maximaler Stundenanzahl & \textit{Kann} \\ \hline
+		A14 & Paralleler Zugriff & \textit{Kann} \\ \hline
+		A15 & Tooladministration & \textit{Kann} \\ \hline
+		A16 & Kursübersicht & \textit{Kann} \\ \hline
+		A17 & Farbiger Planungsstand & \textit{Kann} \\ \hline
+		A18 & Planungsexport & \textit{Kann} \\ \hline
+		A19 & Informationen der Veranstaltungen & \textit{Kann} \\ \hline
+		A20 & Verantaltungstitel & \textit{Kann} \\ \hline
+		A21 & Automatisierte Benachrichtigungen & \textit{Kann} \\ \hline
+		A22 & Klausurenmaximum & \textit{Muss} \\ \hline
+		A23 & Korrekte Moduldurchführung & \textit{Muss} \\ \hline
+		A24 & Eintragung von Wahlmodulen & \textit{Muss} \\ \hline
+		A25 & Dozentenvorschläge & \textit{Kann} \\ \hline
+		A26 & Weiterführbarkeit & \textit{Kann} \\ \hline
+		A27 & Usability & \textit{Muss} \\ \hline
+	\end{tabular}
+	\captionsetup{format=hang}
+	\caption{\label{tab:prios}Priorisierung der Anforderungen \\}
+\end{table}
+
+

@@ -100,6 +100,13 @@
 	basicstyle=\ttfamily\small}
 
 
+%		TABLES
+\usepackage{longtable} 
+\newcommand{\centercell}[1]{\multicolumn{1}{c|}{#1}} 
+\newcommand{\head}[1]{\centercell{\bfseries#1}}
+
+
+
 %		EXTRA PACKAGES
 \usepackage{lipsum}    %Blindtext
 \usepackage{graphicx} % use various graphics formats
