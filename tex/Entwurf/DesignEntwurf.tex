@@ -1,18 +1,42 @@
 \section{Design Entwurf}
-\begin{itemize}
-\item verwendetes Tool für die Mockups: figma.com; Gründe:
-	\subitem kostenlos für Studenten
-	\subitem man kann kooperativ in Echtzeit daran arbeiten
-	\subitem einfach zu bedienen
-	\subitem enthält alle wichtigen Design-Werkzeuge
-	\subitem man kann einen interkativen Prototypen erstellen
-\item Mitwirkende: 
-	\subitem Design-Team: Andrea, Verena
-	\subitem Qualitätssicherung: Falk
-\item Vorgehensweise
-	\subitem 1. Entwurf unterschiedlicher erster Design-Ideen
-	\subitem 2. Einholen der Anforderungen
-	\subitem 3. Auswahl einer ersten Design-Idee und deren Weiterentwicklung
-	\subitem 4. Erstellung eines interaktiven Prototypen aus den ersten Mockups
-\item Während des Design-Prozesses wurde immer wieder mit Falk Rücksprache gehalten.
-\end{itemize}
+%offene Punkte: 
+%- Mockups noch nicht in einer finalen Version --> Abgleich Text und finales Mockup 
+%- Link zum finalen Mockup
+%- Screenshot von Hauptseite einbinden
+Für das Design sollte ein Prototyp erstellt werden, der den späteren Aufbau der Applikation verdeutlicht.
+Als technisches Hilfsmittel wurde das cloud-basierte Tool \textit{Figma}\footnote{\url{https://www.figma.com/}} verwendet.
+Dieses bietet die Möglichkeit mit mehreren Personen in Echtzeit an einem Prototypen zu arbeiten.
+Dabei ist es in seiner Bedienung leicht verständlich und bietet alle wichtigen Design-Werkzeuge. 
+Außerdem können die Elemente der Benutzeroberfläche miteinander verbunden und mit Interaktionen sowie Animationen versehen werden, sodass ein interaktiver Prototyp entsteht.
+Nach dem Starten eines Prototyps kann das Design der Oberfläche sowie die Navigationen geprüft werden.
+Über einen generierten Link lässt sich der Prototyp mit Projektbeteiligten teilen. 
+
+Für das Erstellen des Designs wurde eine iterative Vorgehensweise gewählt.  
+Gestartet ist der Prozess mit dem Einholen von Anforderungen, siehe Kapitel \ref{ch:Anforderungsanalyse}.
+Basierend darauf konnte die allgemeine Struktur der Benutzeroberfläche erstellt werden.
+Anschließend verlief der Prozess in vielen Iterationsschleifen, in denen bekannte Anforderungen zunächst statisch umgesetzt und bei Rücksprachen mit den Stakeholdern deren Feedback eingeholt wurde.
+Dabei wurden ebenfalls weitere Anforderungen besprochen, sodass das Design nachfolgend erweitert werden konnte.
+Während den Schleifen wurde der Prototyp jeweils interaktiv erstellt, d.h. mit Animationen versehen, und es wurden weitere Details hinzugefügt.
+Auf diese Weise sind während dem Projekt verschiedene Versionen des Prototyps entstanden, die jeweils mit den Stakeholdern besprochen wurden.
+Neben diesen Absprachen erfolgten zusätzliche mit dem Back-End-Team.
+Thema dieser Besprechungen waren die Umsetzbarkeit der Funktionalitäten, die vom Back-End bereitgestellt werden müssen.
+Damit aber auch das gesamte Projektteam über den Entwurf und die Fortschritte informiert blieb, wurden das jeweils aktuelle Design in verschiedenen wöchentlichen Meetings des gesamten Teams präsentiert.
+Damit jedes Team-Mitglied jederzeit auf den Prototyp zugreifen kann, wurde der Link in Trello eingetragen. 
+
+Die designte Benutzeroberfläche besteht, wie in Abbildung \ref{fig:Seitenaufbau} dargestellt, jeweils aus drei Elementen.
+Sie beinhaltet eine Kopfzeile, eine Navigationsleiste und die gewählten Inhalte.
+Die Kopfzeile stellt am linken Rand das Logo der \acs{DHBW} und am rechten Rand den Benutzernamen dar.
+Durch das Anklicken des Benutzernamens können allgemeine Kontoeinstellungen getätigt oder das Abmelden von der Applikation ausgelöst werden.
+Auf jeder Seite der Benutzeroberfläche befindet sich außerdem am linken Rand eine vertikale Navigationsleiste.
+Diese beinhaltet die drei Hauptseiten und ermöglicht das Navigieren zwischen diesen.
+Es können die Vorlesungen und Vorlesungspläne je Kurs angeschaut werden, eine Übersicht der Dozenten und verschiedene Modulkataloge. 
+
+\begin{figure}[h]
+	\centering 
+	\includegraphics[width=\textwidth]{img/Seitenaufbau1.pdf}
+	\captionsetup{format=hang}
+	\caption[Aufbau der Benutzeroberfläche]{\label{fig:Seitenaufbau}Aufbau der Benutzeroberfläche}
+\end{figure}
+
+\textbf{Link finale Version Mockups}
+
