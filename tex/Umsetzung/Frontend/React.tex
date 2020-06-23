@@ -1,9 +1,47 @@
 \subsection{Implementierung mit React}
-\subsubsection{Komponentenbasierte Entwicklung}
-	
-	
+\subsubsection{Vorstellung des Frameworks}
+Zur Erstellung des Front-Ends der Webanwendung werden hauptsächlich die etablierten Technologien \ac{HTML}, \ac{CSS} und JavaScript benutzt.
+
+Zusätzlich wird React, eine JavaScript-Bibliothek, verwendet.
+React\footnote{\url{https://reactjs.org}} ist ein Framework, welches seit 2013 von Facebook als Open-Source-Lösung bereitgestellt wird.\autocite[Vgl.][S. 3]{React2019} 
+Mit React können effizient sogenannte \ac{SPA} entwickelt werden. 
+Eine \ac{SPA} ist eine Webanwendung, die aus lediglich einer \ac{HTML}-Seite besteht und deren Inhalte dynamisch zur Laufzeit nachgeladen bzw. erweitert werden.
+Der Kern von React liegt auf einem komponentenbasierten Aufbau der Webanwendungen sowie der jeweiligen Anordnung der Komponenten.\autocite[Vgl.][S. 3]{React2019} 
+
+Komponenten sind unabhängige, wiederverwendbare Entitäten, die durch eine hierarchische Komposition die Inhalte der \ac{SPA} bestimmen und beliebig tief verschachtelt werden können.
+In React werden zwei Typen von Komponenten unterschieden. 
+Zum einen können funktionale Komponenten erzeugt werden, die JavaScript-Funktionen umfassen. 
+Zum anderen werden klassenbasierte Komponenten verwendet. 
+Diese sind JavaScript-Klassen, die eine höhere Komplexität aufweisen, jedoch auch mehr Funktionalitäten besitzen. 
+
+Darüber hinaus sind in React insbesondere die Konzepte \textit{Properties}, zu Deutsch Eigenschaften, und der \textit{State}, zu Deutsch Zustand. 
+Mithilfe von \textit{Properties} können Komponenten Informationen austauschen, sodass beispielsweise eine Eltern-Komponente relevante Informationen an eine Kind-Komponente weitergibt. 
+Die übergebenen Werte der Properties können jedoch nicht geändert werden. 
+
+Dementgegen können sich die Werte bei dem Konzept \textit{State} ändern. 
+Zu jeder Komponente gibt es einen Objekt-Zustand, \texttt{this.state}, worauf nur die Komponente selbst zugreifen und den Wert ändern kann. 
+Der State einer Komponente enthält Eigenschaften, die von der Komponente beobachtet werden können. 
+Wenn sich der State einer Komponente ändert, wird der \ac{DOM} angepasst und die Komponente mit den aktualisierten Werten gerendert. 
+
+Sobald Änderungen den Inhalt der Webanwendung verändern, wird bei React nicht der komplette Seiteninhalt angepasst, sondern lediglich die tatsächliche Veränderungen bei dem entsprechenden \ac{DOM}-Element vorgenommen. 
+Der Vorteil hierbei ist, dass die Benutzeroberfläche schneller auf Veränderungen reagieren kann. 
+
 \subsubsection{Komponentenhierarchie}
+\textit{Todo (Entwicklung derzeit in Progress)}
+\begin{itemize}
+	\item Ordnerstruktur 
+	\item Aufbau der Hauptkomponente, JSX erklären
+\end{itemize}
 	
 \subsubsection{Dynamische Seitenverwaltung}
+\textit{Todo (Entwicklung derzeit in Progress)}
+\begin{itemize}
+	\item Virtuelles \ac{DOM}
+\end{itemize}
 	
 \subsubsection{React-Routing}
+\textit{Todo (Entwicklung derzeit in Progress)}
+\begin{itemize}
+	\item über Proxy in Dev; in Prod ohne
+	\item siehe Infrastruktur
+\end{itemize}
