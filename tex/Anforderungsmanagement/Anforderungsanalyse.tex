@@ -17,6 +17,9 @@ Wurden zu allen Vorlesungen passende Dozenten sowie Zeitfenster gefunden, werden
 Mit Hilfe eines Tools soll künftig das eben beschriebene Vorgehen zur Erstellung der Vorlesungspläne mit seinen manuellen Teilprozessen für die Studiengangsleiter erleichtert werden.
 Ziel dabei ist es, eine zentrale Dozentenverwaltung zu realisieren sowie den Studiengangsleitern ein einheitliches System zur Planung und Koordination ihrer Kurse zur Verfügung zu stellen.
 
+\section{Ist-Analyse}
+%TODO
+
 
 \section{Anforderungen}
 
@@ -35,11 +38,11 @@ Die Anforderungen sind in Tabelle \ref{tab:Anforderungen} aufgelistet.
 	\hline &&\\[-0.5em]
 	\textbf{Anforderung} & \head{Kurztitel} & \head{Beschreibung} \\ \hline
 	\endhead
-	\parbox[t]{3cm}{A1} & Dozentenpool & Alle Dozenten sollen in einem zentralen Dozentenpool verwaltet werden können.\\ \hline
+	\parbox[t]{3cm}{A1} & Dozentenpool & Alle Dozenten sollen in einem zentralen Dozentenpool verwaltet werden können.\label{anf:Dozenten}\\ \hline
 	\parbox[t]{3cm}{A2} & Stundenplan & Die Software soll Stundenpläne verwalten und erzeugen anhand diverser Parameter, die eingetragen werden wie z.\,B. welche Vorlesungen in welchem Semester für einen Kurs und Dozenten stattfinden.\\ \hline
-	\parbox[t]{3cm}{A3} & Google Calendar & Google Calendar soll vollständig in die Software integriert werden.\\ \hline
-	\parbox[t]{3cm}{A4} & Profilzuordnung & Die Profile der User, mit denen sie sich am System anmelden, sollen über deren  Mail-Adresse zugeordnet werden.\\ \hline
-	\parbox[t]{3cm}{A5} & Modulkataloge & Die Modulkataloge mit den Vorlesungen, Stundenanzahlen und Prüfungsmöglichkeiten (Klausur, Referat oder andere Ausarbeitungen) sollen verwaltet und über Templates hinzugefügt werden können.\\ \hline
+	\parbox[t]{3cm}{A3} & Google Calendar & Google Calendar soll vollständig in die Software integriert werden.\label{anf:GC}\\ \hline
+	\parbox[t]{3cm}{A4} & Profilzuordnung & Die Profile der User, mit denen sie sich am System anmelden, sollen über deren  Mail-Adresse zugeordnet werden.\label{anf:Profilzuordnung}\\ \hline
+	\parbox[t]{3cm}{A5} & Modulkataloge & Die Modulkataloge mit den Vorlesungen, Stundenanzahlen und Prüfungsmöglichkeiten (Klausur, Referat oder andere Ausarbeitungen) sollen verwaltet und über Templates hinzugefügt werden können.\label{anf:Modulkatalog} \\ \hline
 	\parbox[t]{3cm}{A6} & Kurskoordination & Ein Studiengangsleiter soll eine variable Anzahl an Kursen im System koordinieren können.\\ \hline
 	\parbox[t]{3cm}{A7} & Eindeutigkeit der Module & Module müssen eindeutig identifizierbar sein, da z.\,B. das Statistikmodul für Wirtschaftsinformatiker nicht gleich dem Statistikmodul für angewandte Informatiker ist.\\ \hline
 	\parbox[t]{3cm}{A8} & Suchen und Filtern im Dozentenpool & In dem Dozentenpool sollen Dozenten per Suche gefunden sowie nach sinnvollen Kriterien gefiltert werden können.\\ \hline
