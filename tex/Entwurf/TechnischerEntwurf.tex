@@ -6,17 +6,17 @@ Für das serverseitige Speichern von Daten sind relationale Datenbanken weit ver
 Deshalb wird auch im Rahmen des Projekts eine solche Form der Datenhaltung genutzt.
 Im Folgenden wird nun das Datenmodell näher erläutert, welches im Anhang \ref{fig:ermodell} dargestellt ist.  
 
-Über \texttt{directorofStudies} werden die Nutzer der Anwendung, die Studiengangsleiter, dargestellt.
+Über \texttt{directorOfStudies} werden die Nutzer der Anwendung, die Studiengangsleiter, dargestellt.
 Sie sind nicht automatisch als Dozierende verfügbar, können jedoch als solche hinzugefügt werden.
 Ein Studiengangsleiter kann zusätzlich ein Administrator der Anwendung sein, wodurch er weitere Berechtigungen erhält, wie das Zurücksetzen von Passwörtern.
 Zu den Aufgaben eines Studiengangsleiter zählt außerdem die Verwaltung von Kursen und die Planung der Semester. 
 
 Die Entität \texttt{course} repräsentiert einen Kurs der \ac{DHBW}, welcher genau einen Studiengang (\texttt{fieldOfStudy}) und eine Studienrichtung (\texttt{majorSubject}) hat.
-Damit die Eindeutigkeit der Module (Anforderung \hyperref[tab:Anforderungen]{A7}) gewährleistet ist, referenziert \texttt{majorSubject} auf die dazugehörigen Modulgruppen und entspricht dadurch gewissermaßen dem Modulkatalog.
+Damit die Eindeutigkeit der Module (Anforderung \hyperref[tab:Anforderungen]{A7}) gewährleistet ist, referenziert \texttt{majorSubject} auf die dazugehörigen Modulgruppen und entspricht dadurch dem gegebenen Aufbau des Modulkatalogs.
 Deshalb beinhaltet es auch das Jahr, ab welchem der Modulkatalog gültig ist. 
 
 Damit auch Wahlmodule abgebildet werden können (Anforderung \hyperref[tab:Anforderungen]{A24}), sind die Module (\texttt{module}) Teil einer Modulgruppe (\texttt{moduleGroup}).
-Besteht die Wahlmöglichkeit zwischen mehreren Modulen beinhaltet die Modulgruppe alle wählbaren Module.
+Besteht die Wahlmöglichkeit zwischen mehreren Modulen, beinhaltet die Modulgruppe alle wählbaren Module.
 Andernfalls beinhaltet sie nur das vorgesehene Modul.
 Damit neben den Informationen des aktuellen Modulkatalogs der \ac{DHBW} auch die Prüfungsleistung je Modul gespeichert werden kann, wird die Entität \texttt{academicRecord} verwendet.
 
