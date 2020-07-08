@@ -18,10 +18,11 @@
 *.acn
 *.acr
 *.alg
+master.pdf
 *.bcf
 *.glsdefs
 *.xml
-*.xdy 
+*.xdy
 ._*
 *.synctex.gz
 !**/img/*.pdf
