@@ -1,6 +1,5 @@
-\subsection{Google Calendar}
-
-Aus der Anforderung A3 aus \vref{tab:Anforderungen} muss der Google Calendar vollständig in die Software integriert werden, um die Vorlesungen für die Kurse organisieren zu können. 
+\subsection{Vorlesungskalendar mit Google Calendar}\label{ch:GC}
+Entsprechend der Anforderungen A2 und A3 aus der Tabelle \vref{anf:GC} muss der Google Calendar vollständig in die Software integriert werden, um die Vorlesungen für die Kurse organisieren zu können. 
 Damit die Ereignisse der jeweiligen Google Calendar angezeigt werden können, muss ein Kalendar in React implementiert werden. 
 
 \subsubsection{Einbindung des DevExtreme React Scheduler}
@@ -35,7 +34,7 @@ In dem React Scheduler können neue Ereignisse in dem Kalender hinzugefügt werd
 In Abbildung \vref{fig:AddReactScheduler} ist das Dialog-Fenster, welchen nach dem Drücken des Hinzufügebuttons erscheint, abgebildet.
 \begin{figure}[H]
 	\centering 
-	\includegraphics[width=\textwidth]{img/FrontEnd/GCAdd.png}
+	\includegraphics[width=10cm]{img/FrontEnd/GCAdd.png}
 	\caption[Erstellen eines Ereignisses im React Scheduler]{\label{fig:AddReactScheduler}Erstellen eines Ereignisses im React Scheduler\footnotemark}
 \end{figure}
 \footnotetext{Eigene Bildschirmaufnahme.}
@@ -79,10 +78,9 @@ Eine detaillierte Dokumentation dieser Anfrage ist in der Schnittstellenbeschrei
 
 \textbf{Ändern von Ereignisssen}\newline
 Vorhandene Ereignisse können ebenfalls bearbeitet werden, indem die entsprechende Veranstaltung ausgewält und der Bearbeiten-Button auf dem erscheinenden Popup, welches in Abbildung \vref{fig:GCPopup} dargestellt ist, geklickt wird. 
-In Abbildung 
 \begin{figure}[H]
 	\centering 
-	\includegraphics[width=8cm]{img/FrontEnd/GCPopup.png}
+	\includegraphics[width=6cm]{img/FrontEnd/GCPopup.png}
 	\caption[Popup eines Ereignisses im React Scheduler]{\label{fig:GCPopup}Popup eines Ereignisses im React Scheduler\footnotemark}
 \end{figure}
 \footnotetext{Eigene Bildschirmaufnahme.}
@@ -99,12 +97,10 @@ In dem Code-Ausschnitt \vref{lst:deleteEvent} ist die Erstellung der Delete-Anfr
 \lstset{language=JavaScript}
 \begin{lstlisting}[caption={Anfrage zum Löschen eines Ereignisses}, label={lst:deleteEvent}]
 function handleAppointmentDelete(deleteAppointmentId, gapi) {
-
   var request = gapi.client.calendar.events.delete({
     'calendarId': creds.calenderID,
     'eventId': deleteAppointmentId
   });
-  console.log(deleteAppointmentId);
 
   request.execute(function (response) {
     if (response.error || response == false) {
