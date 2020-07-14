@@ -1,5 +1,32 @@
 \section{Technischer Entwurf}
 \subsection{Grundlegende Architektur}
+In Abbildung \vref{fig:Aufbau} ist der grundlengede Aufbau der Webanwendung skizziert.
+Dieser besteht aus mehreren Komponenten, die gemäß eines Microservice-Ansatzes unabhängig voneinander bestehen. 
+Dies bietet außerdem die Vorteile, dass durch die verringerte Kopplung eine bessere Wartbarkeit der einzelnen Bestandteile gegeben ist sowie diese einfach ersetzt werden können. 
+Mithilfe eines Docker-Netzwerks kann dieser Ansatz umgesetzt werden und bietet zusätzlich ein einfaches Deployment der Anwendung. 
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=13cm]{img/TechnischerEntwurf.pdf}
+	\caption[Grundlegende Architektur]{\label{fig:Aufbau}Grundlegende Architektur}
+\end{figure}
+
+Die Abbildung stellt eine Übersicht über den Aufbau dar und bietet eine logische Trennung der Komponenten. 
+Allgemein lassen sich folgende Hauptkomponenten unterscheiden:
+\begin{itemize}
+    \item Front-End zur Bereitstellung der Benutzeroberfläche an den Webbrowser des Clients 
+    \item Back-End zur Datenhaltung und Geschäftslogik
+    \item Proxy als Kommunikationsschnittstelle
+    \item Webbrowser mit einer Anbindung an die Google Calendar-Schnittstelle.
+\end{itemize} 
+
+Das Front- und Back-End sollen als eigenständige Microservices mit eigenem Server umgesetzt werden, sodass die Entwicklung der Komponenten losgelöst ablaufen kann und durch andere Technologien ersetzt werden könnte.
+Das Front-End dient zur Bereitstellung der grafischen Benutzeroberfläche und wird an den Webbrowser des Clients ausgeliefert. 
+Das Back-End hingegen besteht aus einem Server mit der Geschäftslogik sowie einer Datenbank zur Datenhaltung der Anwendung. 
+Diese Dienste sollen über eine \ac{API} erreichbar sein. 
+Der Proxy stellt die zentrale Schnittstelle der Webanwendung dar und liefert das Front-End aus. 
+Von dem Webbrowser wird außerdem auf die externe Schnittstelle des Google Calendars zugegriffen, um eine Verbindung zu einem Google Calendar gemäß der Anforderung A2 und A3 aus der Tabelle \vref{anf:GC} herzustellen.
+
 
 \subsection{Datenmodell}
 Für das serverseitige Speichern von Daten sind relationale Datenbanken weit verbreitet.
