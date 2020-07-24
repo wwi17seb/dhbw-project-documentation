@@ -1,9 +1,8 @@
 \section{Funktionalitäten}
 %TODO Trello-Hinweis über Farben des Status auf Vorlesungspläne: \url{https://trello.com/c/ciMzmZTX}
 
-In diesem Abschnitt soll eine grobe Übersicht über die Hauptfunktionalitäten von Exoplan gegeben werden. Diese sind nachfolgend aufgelistet und werden mit Hilfe von Beispielen erklärt.
+In diesem Abschnitt soll eine grobe Übersicht über die Hauptfunktionalitäten von Exoplan gegeben werden. Diese sind nachfolgend aufgelistet und werden anschließend näher erklärt.
 
-Grobe Übersicht über die Hauptprozesse, wie: 
 %Keine Screenshots sondern wir läuft der Prozess ab
 \begin{itemize}
 	\item Neuen Kurs anlegen,
@@ -16,17 +15,20 @@ Grobe Übersicht über die Hauptprozesse, wie:
 
 \subsection{Neuen Kurs anlegen}
 
-Um einen Kurs neuen in Exoplan anzulegen, muss sich der Benutzer mit seinen Anmeldedaten anmelden. Anschließen kann in der Anwendung auf der linken Seite der Menüpunkt \textit{Verlesungspläne} ausgewählt werden. Daraufhin wird der Tab \textit{Kurs hinzufügen} dargestellt, welcher daraufhin geöffnet wird.
+Um einen neuen Kurs in Exoplan anzulegen, muss sich der Benutzer mit seinen Anmeldedaten anmelden. Anschließen kann in der Anwendung auf der linken Seite der Menüpunkt \textit{Verlesungspläne} ausgewählt werden. Daraufhin kann der Tab \textit{Kurs hinzufügen} geöffnet werden.
 
 Damit das volle Potential des Exoplan-System vollumfänglich ausgeschöpft werden kann, muss die Kurskonfiguration sehr genau durchgeführt werden. Hierbei wird zuerst der Name des Kurses angegeben, also zum Beispiel \textit{WWI17SEB}. Außerdem müssen Studiengang (Wirtschaftinformatik, BWL, usw.) und Studienrichtung (Software Engineering, Sales and Consulting) für den Kurs spezifiziert werden. Abschließend wird die Anzahl der Semester ausgewählt, der Zeitraum für jedes Semester angegeben und die Google Calender ID des Kurses eingetragen.
 
 \subsection{Dozenten kontaktieren}
 
-Im Studienalltag gilt es viele verschiedene Informationen gleichzeitig zu bewältigen. Ein großes Problem ist hierbei eine Überblick über die vorhandenen Dozenten und ihrer Expertise zu behalten. Aus diesem Grund bietet Exoplan eine leistungsstarke und zugleich einfache Dozentenverwaltung. Diese Kann 
+Im Studienalltag gilt es viele verschiedene Informationen gleichzeitig zu bewältigen. Ein großes Problem ist hierbei eine Überblick über die vorhandenen Dozenten und ihrer Expertise zu behalten. Aus diesem Grund bietet Exoplan eine leistungsstarke und zugleich einfache Dozentenverwaltung. Diese liefert Kontaktdaten, Informationen zu Qualifikationen und Auskunft darüber welchem Studiengangsleiter ein Dozent zugeordnet ist.
 
+Auch neue Dozenten können durch den Button \textit{Dozent hinzufügen} zu Exoplan hinzugefügt werden.
 \subsection{Vorlesungen im Kalender verwalten}
 
+Das Planen von Vorlesungen und die Verwaltung dieser im Kalender des Kurses, ist eine grundlegende Funktionalität von Exoplan. Hierzu wird im Menü auf der rechten Seite der Menüpunkt \textit{Vorlesungspläne} ausgewählt. Anschließend erhält man eine Übersicht zu den vorhandenen Kursen. Um eine Vorlesung für einen bestimmten Kurs zu planen, wird der betreffende Kurs-Tab ausgewählt und über den Button \textit{Vorlesung planen} eine neue Vorlesung hinzugefügt werden. Wichtig zu beachten ist jedoch, dass die Vorlesungen vorher im dazugehörigen Modulkatalog erstellt wurde.
 
+Damit der Kalender von Google importiert werden kann, müssen vorher die betreffenden Anmeldedaten eingegeben werden. Diese werden über ein Pop-Up-Fenster abgefragt. Wurden alle Daten korrekt eingegeben, wird der Google-Kalender des betreffenden Kurs in Exoplan eingebunden und sychronisiert. Nun können einzelne Vorlesungstermin mit einem Klick auf den Button \textit{Vorlesung im Kalender eintragen} hinzugefügt werden. Auch ein einfaches Verschieben der Termine über die Benutzeroberfläche ist möglich.
 
 \subsection{Modulkatalog verwalten}
 
@@ -47,3 +49,10 @@ Die Benutzerverwaltung kann über den Tab \textit{Benutzer} erreicht werden und 
 Registrierungsschlüssel werden benötigt, damit sich neue Benutzer in Exoplan registrieren können. Dieser Schlüssel kann über den Tab \textit{Registrierungschlüssel} festgelegt werden.
 
 \subsubsection{Google Calender}
+
+In dieser Übersicht werden alle wichtigen Attribute zur Verwendung der Google-Calender-API konfiguriert:
+\begin{itemize}
+	\item Client-ID
+	\item API-Key
+	\item Client-Schlüssel
+\end{itemize}
