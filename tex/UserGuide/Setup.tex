@@ -1,8 +1,76 @@
 \section{Setup}
+\subsection{Repositories von GitHub clonen}
+
+Das Projekt ExoPlan setzt sich aus einem Frontend und einem Backend zusammen. Diese sind jeweils in ein eigenes Repository ausgelagert und müssen einzeln ausgecheckt werden. Dazu ist es empfehlenswert ein Verzeichnis mit dem Namen \texttt{dhbw-projekt} anzulegen. Folgende Repositories gilt es auszuchecken:
 \begin{itemize}
-	\item Wie bekommt man das Projekt? / Woraus besteht das Paket?
-	\item Was muss man tun, um die Web-Anwendung aufzusetzen? 
-	\item Welche Konfigurationen müssen vorgenommen werden?
-	\item Was sind die Login-Daten? 
-	\item VM, Docker
+	\item https://github.com/nikolockenvitz/dhbw-project-frontend
+	\item https://github.com/nikolockenvitz/dhbw-project-backend
 \end{itemize}
+
+Zum Auschecken werden die folgenden Befehle verwendet:
+
+\texttt{git clone https://github.com/nikolockenvitz/dhbw-project-frontend.git}
+
+\texttt{git clone https://github.com/nikolockenvitz/dhbw-project-backend.git}
+
+\subsection{Konfiguration von Backend}
+
+Um das Backend verwenden zu können, ist es notwendig \textit{Docker} zu installieren, falls dies noch nicht installiert ist. Die korrekte Funktion von Docker kann mit dem folgenden Befehl überprüft werden: \texttt{docker version}.
+
+Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendig:
+
+\begin{enumerate}
+	\item Im Root-Verzeichnis muss das Verzeichnis \texttt{env} angelegt werden.
+	\item Im \texttt{env}-Verzeichnis wird die Datei \texttt{app.properties} mit dem folgenden Inhalt angelegt:
+	\begin{lstlisting}
+	app.port = 3000
+	app.defaultUser = admin
+	app.defaultPassword = defaultpasswordhere
+	app.isAdmin = true
+	app.forceSync = false
+	app.enableTestData = false
+	
+	server.user     = dhbw
+	server.database = becker
+	server.password = iH0p3youU5EaSecretPa$$word
+	server.port = 5432
+	server.dialect = postgres
+	jwt.superSecret = TreevgQreNefpuUngHroreunhcg
+	AvpugfTrznpug13
+	server.host = postgres
+	
+	pepper = ErarFgvaxg
+	\end{lstlisting}
+	
+	\item Im Verzeichnis \texttt{./docker} wird die Datei \texttt{.env} angelegt. Dort werden weitere Konfigurationen für die Verwendung der Datenbank vorgenommen:
+	
+	\begin{lstlisting}
+	postgres_user=dhbw
+	postgres_password=iH0p3youU5EaSecretPa$$word
+	postgres_port=5432
+	pgadmin_user=project@dhbw.de
+	pgadmin_password=test1234
+	\end{lstlisting}
+	
+	\item Im nächsten Schritt müssen die benötigten Zertifikate in das Verzeichnis \texttt{./docker
+		/nginx/ssl} kopiert werden.
+	
+\end{enumerate}
+
+\subsection{Start von Exoplan}
+
+Da für das Frontend keine Konfiguration vorgenommen werden muss, kann nun das  Gesamtsystem gestartet werden. Hierfür wird im Backend-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt: \texttt{docker-compose up --build}
+
+Nach einem erfolgreichen Start kann Exoplan über \textit{https://localhost/} aufgerufen werden. Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
+
+Exoplan kann des Weiteren über den folgenden Befehl heruntergefahren werden. Achtung: Hierfür muss in das Backend-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:
+
+\texttt{docker-compose down}
+
+%\begin{itemize}
+%	\item Wie bekommt man das Projekt? / Woraus besteht das Paket?
+%	\item Was muss man tun, um die Web-Anwendung aufzusetzen? 
+%	\item Welche Konfigurationen müssen vorgenommen werden?
+%	\item Was sind die Login-Daten? 
+%	\item VM, Docker
+%\end{itemize}
