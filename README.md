@@ -12,7 +12,7 @@
   </p>
 
   <p align="center">
-    <b>Documentation for the terrific Peojekt</b>
+    <b>Documentation for ExoPlan</b>
     <br>
     Template and corresponding instructions can be found on https://github.com/pfisterer/DHBW_LaTeX_Template
   </p>
