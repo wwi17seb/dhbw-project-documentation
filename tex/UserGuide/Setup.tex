@@ -1,7 +1,10 @@
 \section{Setup}
 \subsection{Repositories von GitHub clonen}
 
-Das Projekt ExoPlan setzt sich aus einem Frontend und einem Backend zusammen. Diese sind jeweils in ein eigenes Repository ausgelagert und müssen einzeln ausgecheckt werden. Dazu ist es empfehlenswert ein Verzeichnis mit dem Namen \texttt{dhbw-projekt} anzulegen. Folgende Repositories gilt es auszuchecken:
+Das Projekt ExoPlan setzt sich aus einem Frontend und einem Back-End zusammen. 
+Diese sind jeweils in ein eigenes GitHub-Repository ausgelagert und müssen einzeln ausgecheckt werden. 
+Dazu ist es empfehlenswert ein Verzeichnis mit dem Namen \texttt{dhbw-projekt} anzulegen, in welchem die beiden Repositories lokal abgelegt werden. 
+Folgende Repositories gilt es auszuchecken:
 \begin{itemize}
 	\item https://github.com/nikolockenvitz/dhbw-project-frontend
 	\item https://github.com/nikolockenvitz/dhbw-project-backend
@@ -13,14 +16,15 @@ Zum Auschecken werden die folgenden Befehle verwendet:
 
 \texttt{git clone https://github.com/nikolockenvitz/dhbw-project-backend.git}
 
-\subsection{Konfiguration von Backend}
+\subsection{Konfiguration von Back-End}
 
-Um das Backend verwenden zu können, ist es notwendig \textit{Docker} zu installieren, falls dies noch nicht installiert ist. Die korrekte Funktion von Docker kann mit dem folgenden Befehl überprüft werden: \texttt{docker version}.
+Um das Back-End verwenden zu können, ist es notwendig \textit{Docker} zu installieren, falls dies noch nicht installiert ist. 
+Die korrekte Funktion von Docker kann über die Anzeige der aktuellen Version mit dem folgenden Befehl überprüft werden: \texttt{docker version}.
 
 Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendig:
 
 \begin{enumerate}
-	\item Im Root-Verzeichnis muss das Verzeichnis \texttt{env} angelegt werden.
+	\item Im Root-Verzeichnis des Back-Ends muss das Verzeichnis \texttt{env} angelegt werden.
 	\item Im \texttt{env}-Verzeichnis wird die Datei \texttt{app.properties} mit dem folgenden Inhalt angelegt:
 	\begin{lstlisting}
 	app.port = 3000
@@ -57,20 +61,14 @@ Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendi
 	
 \end{enumerate}
 
-\subsection{Start von Exoplan}
+\subsection{Start von ExoPlan}
 
-Da für das Frontend keine Konfiguration vorgenommen werden muss, kann nun das  Gesamtsystem gestartet werden. Hierfür wird im Backend-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt: \texttt{docker-compose up --build}
+Da für das Frontend keine weiteren Konfiguration vorgenommen werden müssen, kann nun das Gesamtsystem gestartet werden. 
+Hierfür wird im Back-End-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt: \texttt{docker-compose up --build}
 
-Nach einem erfolgreichen Start kann Exoplan über \textit{https://localhost/} aufgerufen werden. Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
+Im Front-End-Verzeichnis hingegen muss der Befehl \texttt{npm install} einmalig sowie anschließend ein \texttt{npm start} ausgeführt
 
-Exoplan kann des Weiteren über den folgenden Befehl heruntergefahren werden. Achtung: Hierfür muss in das Backend-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:
+Nach einem erfolgreichen Start kann ExoPlan über \textit{https://localhost/} aufgerufen werden. Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
 
-\texttt{docker-compose down}
-
-%\begin{itemize}
-%	\item Wie bekommt man das Projekt? / Woraus besteht das Paket?
-%	\item Was muss man tun, um die Web-Anwendung aufzusetzen? 
-%	\item Welche Konfigurationen müssen vorgenommen werden?
-%	\item Was sind die Login-Daten? 
-%	\item VM, Docker
-%\end{itemize}
+ExoPlan kann des Weiteren über den folgenden Befehl heruntergefahren werden. 
+Hierfür muss in das Back-End-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:\texttt{docker-compose down}
