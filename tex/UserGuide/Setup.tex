@@ -64,11 +64,15 @@ Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendi
 \subsection{Start von ExoPlan}
 
 Da für das Frontend keine weiteren Konfiguration vorgenommen werden müssen, kann nun das Gesamtsystem gestartet werden. 
-Hierfür wird im Back-End-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt: \texttt{docker-compose up --build}
+Hierfür wird im Back-End-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt:\\ 
+\texttt{docker-compose up --build}
 
-Im Front-End-Verzeichnis hingegen muss der Befehl \texttt{npm install} einmalig sowie anschließend ein \texttt{npm start} ausgeführt
+Im Front-End-Verzeichnis hingegen muss der Befehl \texttt{npm install} einmalig sowie anschließend ein \texttt{npm start} ausgeführt werden.
 
-Nach einem erfolgreichen Start kann ExoPlan über \textit{https://localhost/} aufgerufen werden. Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
+Nach einem erfolgreichen Start kann ExoPlan über \textit{http://localhost:3000/} aufgerufen werden. 
+Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
 
 ExoPlan kann des Weiteren über den folgenden Befehl heruntergefahren werden. 
-Hierfür muss in das Back-End-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:\texttt{docker-compose down}
+Hierfür muss in das Back-End-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:
+
+\texttt{docker-compose down}.
