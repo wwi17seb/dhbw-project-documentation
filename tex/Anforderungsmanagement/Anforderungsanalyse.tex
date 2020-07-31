@@ -1,13 +1,10 @@
-%\chapter{Anforderungsanalyse}
-\label{ch:Anforderungsanalyse}
-
 In diesem Kapitel wird die Anforderungsanalyse erstellt.
 Zunächst wird die zu lösende Problemstellung sowie die Zielsetzung des Projekts beschrieben.
 Anschließend werden die Anforderungen des Auftraggebers identifiziert.
 Alle Anforderungen werden danach anhand ihrer Relevanz und dem gegebenen zeitlichen Budget priorisiert.
 
 
-\section{Problemstellung und Zielsetzung}\label{sec:probl}
+\section{Ist-Analyse und Zielsetzung}\label{sec:probl}
 
 Die Vorlesungspläne für die Kurse des Studiengangs Wirtschaftsinformatik an der \ac{DHBW} müssen aktuell vollständig manuell durch die jeweiligen Tutoren erstellt werden.
 Eine Excel-Vorlage dient dabei als Unterstützung, indem darin Informationen über den Kurs und die Module gesammelt werden.
@@ -16,9 +13,6 @@ Wurden zu allen Vorlesungen passende Dozenten sowie Zeitfenster gefunden, werden
 
 Mit Hilfe eines Tools soll künftig das eben beschriebene Vorgehen zur Erstellung der Vorlesungspläne mit seinen manuellen Teilprozessen für die Studiengangsleiter erleichtert werden.
 Ziel dabei ist es, eine zentrale Dozentenverwaltung zu realisieren sowie den Studiengangsleitern ein einheitliches System zur Planung und Koordination ihrer Kurse zur Verfügung zu stellen.
-
-\section{Ist-Analyse}
-%TODO
 
 
 \section{Anforderungen}
@@ -50,7 +44,7 @@ Die Anforderungen sind in Tabelle \ref{tab:Anforderungen} aufgelistet.
 	\parbox[t]{3cm}{A10} & Dozenteninformationen im Dozentenpool & Zu jedem Dozenten im Dozentenpool sollen Informationen wie Name, Mail, Handynummer verfügbar sein. Zudem sollen Felder für eine Bewertung, eine Information, ob der Dozent hauptamtlich tätig ist und der/die jeweilige(n) Schwerpunkt(e) sowie ein Freitextfeld für Kommentare vorhanden sein.\\ \hline
 	\parbox[t]{3cm}{A11} & Automatisierte Dozentenanfrage & Nach Auswahl eines Dozenten soll diesem automatische eine Anfrage via Mail geschickt werden, wobei ein personalisierbares Template als Basis dient.\\ \hline
 	\parbox[t]{3cm}{A12} & Zuordnung der Dozenten & Die Dozenten sollen jeweils einem Studiengangsleiter zugeordnet werden.\\ \hline
-	\parbox[t]{3cm}{A13} & Warnung bei maximaler Studenanzahl & Das Tool soll benachrichtigen, wenn ein Dozent seine maximale Stundenanzahl überschreiten würde bei der aktuellen Planung.\\ \hline
+	\parbox[t]{3cm}{A13} & Warnung bei maximaler Stundenanzahl & Das Tool soll benachrichtigen, wenn ein Dozent seine maximale Stundenanzahl überschreiten würde bei der aktuellen Planung.\\ \hline
 	\parbox[t]{3cm}{A14} & Paralleler Zugriff & Parallele Zugriffe auf einen Kurs durch jeweils berechtigte Personen sollen möglich sein.\\ \hline
 	\parbox[t]{3cm}{A15} & Tooladministration & Die Administration des Tools soll über die Studiengangsleiter erfolgen.\\ \hline
 	\parbox[t]{3cm}{A16} & Kursübersicht & Es soll pro Kurs eine Übersicht mit Anzahl und Art der jeweiligen Prüfungsleistungen des Kurses existieren.\\ \hline
@@ -80,6 +74,7 @@ Die Anforderungen mit ihren jeweiligen Priorisierungen sind in Tabelle \vref{tab
 
 \begin{table}[h]
 	\centering
+	\renewcommand*{\arraystretch}{1.25}
 	\begin{tabular}{|l|p{8cm}|l|}
 		\hline &&\\[-0.5em]
 		\textbf{Anforderung} & \head{Kurztitel} & \textbf{Priorität} \\ \hline
