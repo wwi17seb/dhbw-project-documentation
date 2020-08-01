@@ -65,7 +65,6 @@ Zusätzlich können Ereignisse in dem Google Calendar gelöscht werden, indem di
 Zur Durchführung dieser Operation wird das Event \textit{delete} verwendet, wobei lediglich die Calendar-ID sowie die Event-ID übermittelt werden.\footnote{\url{https://developers.google.com/calendar/v3/reference/events/delete}}   
 In dem Code-Ausschnitt \vref{lst:deleteEvent} ist die Erstellung der Delete-Anfrage abgebildet.
 
-%TODO Formatting and Coloring JavaScript-Code
 \lstset{language=JavaScript}
 \begin{lstlisting}[caption={Anfrage zum Löschen eines Ereignisses}, label={lst:deleteEvent}]
 function handleAppointmentDelete(deleteAppointmentId, gapi) {
@@ -76,9 +75,11 @@ function handleAppointmentDelete(deleteAppointmentId, gapi) {
 
   request.execute(function (response) {
     if (response.error || response === false) {
-      showSnackbar('L\"oschen fehlgeschlagen. Neuladen der Seite erforderlich.', SEVERITY.ERROR);
+      showSnackbar('Loeschen fehlgeschlagen. 
+      Neuladen der Seite erforderlich.', SEVERITY.ERROR);
     } else {
-      showSnackbar('Vorlesung erfolgreich gel\"oscht.', SEVERITY.SUCCESS);
+      showSnackbar('Vorlesung erfolgreich geloescht.',
+      SEVERITY.SUCCESS);
     }
   });
 }
