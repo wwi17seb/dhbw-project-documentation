@@ -1,8 +1,27 @@
 \chapter{Fazit und Ausblick}
-Anmerkungen Martin (01.07.20)
-\begin{itemize}
-	\item Nicht alle Routen komplett nach REST-Paradigma erstellt. Ist bei dem Weiterführen des Projekts eine Möglichkeit zur Verbesserung
-	\item in Entwicklung Verwendung von selbstsignierten Zertifikaten, muss vor dem deployment geändert werden 
-	\item Aktuell ist Datenbank nur so lange persistent wie Docker-Container nicht weggeworfen wird 
-	\\ -> in laufendem Betrieb: regelmäßige Backups durchführen und/oder Container auf eine persistente Schicht (z.B. Docker-Volume) mounten
-\end{itemize}
+\section{Fazit}
+Abschließend lässt sich sagen, dass das Projekt sehr erfolgreich abgeschlossen werden konnte. 
+Wie in Tabelle \vref{tab:erfanf} ersichtlich wurden alle Muss-Anforder"-ungen und circa die Hälfte der Kann-Anforderungen erfüllt.
+Bei dem Projektteam war allgemein eine gute Arbeitsmoral von Projektbeginn bis -ende spürbar.
+Jedes Teammitglied konnte und hat seine Fähigkeiten einbringen können und etwas zu dem Projekterfolg beigetragen.
+Dies ist auch aus den Bewertungspunkten ersichtlich,die kaum Ausreißer nach unten aufweisen.
+Während des Projekts konnten bereits mehrere Dinge verbessert werden. 
+Dazu zählt die Zeitplanung des 6. Semesters, welche zu den jeweiligen zeitlichen Abschnitten inhaltliche Ziele beinhaltet, sodass der Fortschritt der Entwicklung besser überprüft werden konnte.
+Eine weitere Verbesserung bestand in der Kommunikation.
+Es wurde generell verstärkt kommuniziert, sowohl im gesamten Team, den jeweiligen Untergruppen als auch mit den Leitern des Projekts. 
+Wichtig zu erwähnen ist auch, dass das durch COVID-19 bedingte Online-Semester kein Hindernis für die Umsetzung des Projekts darstellte.
+Die Absprachen sowie das kollaborative Entwickeln konnten über das verwendete Konferenzsystem verteilt stattfinden.
+
+\section{Ausblick}
+Das Endprodukt bietet noch Möglichkeiten zur weiteren Entwicklung. 
+Im Folgenden werden mögliche Schritte zur Erweiterung aufgeführt.
+Dazu zählen hauptsächlich die noch nicht umgesetzten Kann-Anforderungen, welche der Tabelle \vref{tab:erfanf} entnommen werden können.
+Außerdem wurden durch den Abnahmetest in Kapitel \vref{ch:Test} zusätzliche Möglichkeiten zur Erweiterung aufgezeigt.
+
+Die im Folgenden beschriebenen Punkte sind ebenfalls für die zukünftige Verwendung des Tools zu berücksichtigen.
+Für die Entwicklung der Anwendung wurden selbstsignierte Zertifikate verwendet, die vor der Verwendung ausgetauscht werden sollten.
+Außerdem sind nicht alle entwickelten Routen komplett nach dem REST-Paradigma erstellt, wodurch dort eine weitere Möglichkeit zur Verbesserung besteht.
+Für den laufenden Betrieb ist außerdem zu beachten, dass die Datenbank in einem Docker-Container läuft und deshalb nur so lange persistiert ist, wie der Container ohne Unterbrechung hochgefahren ist.
+Aus diesem Grund sollten regelmäßige Backups durchgeführt oder der Container auf eine persistente Schicht gemountet werden. 
+Des Weiteren werden Passwörter in der Anwendung als Hashwert gespeichert.
+Eine Verbesserungsmöglichkeit ist den Hashwert direkt Clientseitig zu bilden, damit Passwörter nie im Klartext an den Server übermittelt werden.
