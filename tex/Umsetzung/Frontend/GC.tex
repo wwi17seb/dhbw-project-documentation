@@ -21,12 +21,21 @@ Der Google Calendar ermöglicht eine Anbindung an das System über eine \ac{API}
 Damit die Inhalte eines Google Calendars über die Google Calendar-\ac{API}-Schnittstelle\footnote{\url{https://developers.google.com/calendar/v3/reference}} angefragt und in dem React Scheduler angezeigt werden können, müssen die Anfragen über einen Token authentifiziert werden. 
 Hierfür wird OAuth 2.0 verwendet, um die Authentifizierung durchzuführen.\autocite[Vgl.][]{GCApi} 
 
-In einer eigenen JavaScript-Datei \texttt{apiHandlerGoogleCalendar.js} wird der Token bei den Anfragen mitgegeben. Dieser Token wird nach einem einmaligen Bestätigen des Zugriffs auf den Google Calendar erstellt und hinterlegt. 
-Mit einem validen Token werden die Anfragen an die Google Calendar-\ac{API} genehmigt und die Inhalte des jeweiligen Kalenders an die Anwendung übertragen. Die erhaltenen Inhalte werden formatiert und in dem React Scheduler angezeigt.
-
+In der JavaScript-Datei \texttt{apiHandlerGoogleCalendar.js} sind die Funktionalitäten für die Kommunikation zwischen Google Calendar-\ac{API} und der Webanwendung implementiert. 
+Der notwendige \ac{API}-Key und die Information bezüglich des OAuth-Client-IDs werden im Administrationsbereich unter dem Tab \textit{Google Calendar} abgelegt. 
+Der \ac{API}-Key und die OAuth-Client-ID werden vor jedem Aufruf des Google Calendars aus dem Back-End abgerufen. 
+Diese werden zusammen mit der Google Calendar-ID bei den Anfragen mitgegeben. 
+Beim Erstmaligen Einloggen mit einem Google-Account wird die Login-Session gespeichert und hinterlegt. 
+Mit einem validen \ac{API}-Key und der Berechtigung zum Bearbeiten werden die Anfragen an die Google Calendar-\ac{API} genehmigt und die Inhalte des jeweiligen Kalenders an die Anwendung übertragen.
+Die erhaltenen Inhalte werden formatiert und in dem React Scheduler angezeigt.
 
 \subsubsection{Interaktion mit dem Kalender}\label{ch:InteraktionGC}
 Zur Funktionalität des Kalenders werden drei unterschiedliche Interaktionen mit dem Google Calendar benötigt: das Hinzufügen, das Ändern sowie das Löschen von Ereignissen. Im Folgenden werden die Anfragen an die \ac{REST}-\ac{API} des Google Calendars näher beschrieben.
+
+\textbf{Anzeigen von Ereignissen}\newline
+In dem React Scheduler können Ereignisse aus dem Google Kalender angezeigt werden.
+Diese Funktion wird benötigt, damit der Google Calendar und der DevExtreme React Scheduler den gleichen Stand besitzen.
+Sonst könnte es bei fehlgeschlagenen Aktionen zu Inkonsistenzen kommen.
 
 \textbf{Hinzufügen von Ereignissen}\newline
 In dem React Scheduler können neue Ereignisse dem Kalender hinzugefügt werden.
@@ -61,15 +70,15 @@ In dem Code-Ausschnitt \vref{lst:deleteEvent} ist die Erstellung der Delete-Anfr
 \begin{lstlisting}[caption={Anfrage zum Löschen eines Ereignisses}, label={lst:deleteEvent}]
 function handleAppointmentDelete(deleteAppointmentId, gapi) {
   var request = gapi.client.calendar.events.delete({
-    'calendarId': creds.calenderID,
+    'calendarId': gcID,
     'eventId': deleteAppointmentId
   });
 
   request.execute(function (response) {
-    if (response.error || response == false) {
-      alert('Error');
+    if (response.error || response === false) {
+      showSnackbar('L\"oschen fehlgeschlagen. Neuladen der Seite erforderlich.', SEVERITY.ERROR);
     } else {
-      alert('Success');
+      showSnackbar('Vorlesung erfolgreich gel\"oscht.', SEVERITY.SUCCESS);
     }
   });
 }

@@ -29,7 +29,7 @@ Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendi
 	\begin{lstlisting}
 	app.port = 3000
 	app.defaultUser = admin
-	app.defaultPassword = defaultpasswordhere
+	app.defaultPassword = test
 	app.isAdmin = true
 	app.forceSync = false
 	app.enableTestData = false
@@ -65,11 +65,11 @@ Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendi
 
 Da für das Front-End keine weiteren Konfiguration vorgenommen werden müssen, kann nun das Gesamtsystem gestartet werden. 
 Hierfür wird im Back-End-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt:\\ 
-\texttt{docker-compose up --build}
+\texttt{docker-compose up -{}-build}
 
 Im Front-End-Verzeichnis hingegen muss der Befehl \texttt{npm install} einmalig sowie anschließend ein \texttt{npm start} ausgeführt werden.
 
-Nach einem erfolgreichen Start kann ExoPlan über \textit{http://localhost:3000/} aufgerufen werden. 
+Nach einem erfolgreichen Start kann ExoPlan über \textit{http://localhost/} aufgerufen werden. 
 Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
 
 ExoPlan kann des Weiteren über den folgenden Befehl heruntergefahren werden. 
