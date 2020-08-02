@@ -6,17 +6,17 @@ Diese sind jeweils in ein eigenes GitHub-Repository ausgelagert und müssen einz
 Dazu ist es empfehlenswert ein Verzeichnis mit dem Namen \texttt{dhbw-projekt} anzulegen, in welchem die beiden Repositories lokal abgelegt werden. 
 Folgende Repositories gilt es auszuchecken:
 \begin{itemize}
-	\item https://github.com/nikolockenvitz/dhbw-project-frontend
-	\item https://github.com/nikolockenvitz/dhbw-project-backend
+	\item https://github.com/wwi17seb/dhbw-project-frontend
+	\item https://github.com/wwi17seb/dhbw-project-backend
 \end{itemize}
 
 Zum Auschecken werden die folgenden Befehle verwendet:
 
-\texttt{git clone https://github.com/nikolockenvitz/dhbw-project-frontend.git}
+\texttt{git clone https://github.com/wwi17seb/dhbw-project-frontend.git}
 
-\texttt{git clone https://github.com/nikolockenvitz/dhbw-project-backend.git}
+\texttt{git clone https://github.com/wwi17seb/dhbw-project-backend.git}
 
-\subsection{Konfiguration von Back-End}
+\subsection{Konfiguration vom Back-End}
 
 Um das Back-End verwenden zu können, ist es notwendig \textit{Docker} zu installieren, falls dies noch nicht installiert ist. 
 Die korrekte Funktion von Docker kann über die Anzeige der aktuellen Version mit dem folgenden Befehl überprüft werden: \texttt{docker version}.
@@ -61,18 +61,18 @@ Wenn \textit{Docker} korrekt funktioniert, sind weitere Konfigurationen notwendi
 	
 \end{enumerate}
 
-\subsection{Start von ExoPlan}
+\subsection{Starten von ExoPlan}
 
 Da für das Front-End keine weiteren Konfiguration vorgenommen werden müssen, kann nun das Gesamtsystem gestartet werden. 
 Hierfür wird im Back-End-Verzeichnis in das Verzeichnis \texttt{./docker} navigiert und der folgende Befehl ausgeführt:\\ 
 \texttt{docker-compose up -{}-build}
 
-Im Front-End-Verzeichnis hingegen muss der Befehl \texttt{npm install} einmalig sowie anschließend ein \texttt{npm start} ausgeführt werden.
-
-Nach einem erfolgreichen Start kann ExoPlan über \textit{http://localhost/} aufgerufen werden. 
+Nach einem erfolgreichen Start kann ExoPlan über \textit{https://localhost/} aufgerufen werden. 
 Der Administrator kann sich nun mit dem Benutzer \texttt{admin} und dem Passwort \texttt{test} anmelden. Diese Anmeldedaten sollten anschließend sofort geändert werden.
 
 ExoPlan kann des Weiteren über den folgenden Befehl heruntergefahren werden. 
 Hierfür muss in das Back-End-Verzeichnis und dem darin befindlichen \texttt{./docker}-Verzeich navigiert werden:
 
 \texttt{docker-compose down}.
+
+Für den Betrieb der Anwendung im Hintergrund sind nähere Informationen in der Dokumentation von Docker gegeben.\footnote{\url{https://docs.docker.com/compose/reference/up/}}
