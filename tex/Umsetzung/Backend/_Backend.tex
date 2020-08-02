@@ -16,7 +16,7 @@ Außerdem ist sie ziemlich verbreitet und wird von verschiedenen Frameworks unte
 Ein Beispiel dafür ist \textit{Sequelize}\footnote{\url{https://sequelize.org/master/}}, ein \ac{ORM}, welches in diesem Projekt für die Anbindung der Datenbank an das Back-End verwendet wird.
 
 \subsubsection{Architektur}
-Die Architektur des Back-Ends lässt sich durch das in Abbildung \ref{fig:Schichtenmodell} dargestellte Schichtenmodell beschreiben.
+Die Architektur des Back-Ends lässt sich durch das in Abbildung \vref{fig:Schichtenmodell} dargestellte Schichtenmodell beschreiben.
 Wird eine Anfrage an das Back-End gestellt, erfolgt zunächst die Authentifizierung des Benutzers.
 Dazu wird geprüft, ob dieser bereits angelegt wurde und ob der mitgegebene Token dem hinterlegten Token entspricht.
 Dadurch kann entschieden werden, ob die angefragte 
@@ -31,7 +31,7 @@ Route benutzt werden darf.
 \end{figure}
 
 Ist dies der Fall wird die Anfrage an die nächste Schicht weitergegeben.
-Durch die API-Controller werden die Routen abgebildet.
+Durch die \ac{API}-Controller werden die Routen abgebildet.
 Für jede Route gibt es einen eigenen Controller, welcher die jeweiligen \acs{HTTP}-Methoden einer Route anbietet.
 Außerdem enthält diese Schicht eine Steuerlogik, welche prüft, ob die gewünschte Aktion vom Benutzer durchgeführt werden darf. 
 
@@ -57,8 +57,8 @@ Der \acs{HTTP}-Code 500 indiziert einen Fehler, welcher möglicherweise im Back-
 
 
 \subsubsection{Übersicht der Routen}
-Die Tabellen \ref{tab:routen} und \ref{tab:adminrouten} geben eine Übersicht der zur Verfügung stehenden Routen sowie die entsprechenden \acs{HTTP}-Methoden, mit welchen auf die Routen zugegriffen werden kann. 
-Tabelle \ref{tab:routen} beschreibt dabei die Routen und ihre Aktionen, die von allen Nutzern der Anwendung verwendet werden können.
+Tabelle \vref{tab:routen} und Tabelle \vref{tab:adminrouten} geben eine Übersicht der zur Verfügung stehenden Routen sowie die entsprechenden \acs{HTTP}-Methoden, mit welchen auf die Routen zugegriffen werden kann. 
+Tabelle \vref{tab:routen} beschreibt dabei die Routen und ihre Aktionen, die von allen Nutzern der Anwendung verwendet werden können.
 Dazu zählt beispielsweise das nach Anforderung \hyperref[tab:Anforderungen]{A9} geforderte Anlegen und Löschen von Dozenten, welches mithilfe der Route \texttt{$\backslash$lecturers} durchgeführt wird. 
 
 \begin{table}[h]
@@ -90,7 +90,7 @@ Dazu zählt beispielsweise das nach Anforderung \hyperref[tab:Anforderungen]{A9}
 	\caption{\label{tab:routen}Übersicht Routen \\}
 \end{table}
 
-In Tabelle \ref{tab:adminrouten} werden hingegen die Routen und Aktionen veranschaulicht, welche nur von Administratoren verwendet werden können.
+In Tabelle \vref{tab:adminrouten} werden hingegen die Routen und Aktionen veranschaulicht, welche nur von Administratoren verwendet werden können.
 Diese umfassen unter anderem das Anlegen und Auslesen von Nutzern.
 Darüber hinaus kann ein Google Calendar aktualisiert sowie ein Nutzer zu einem Admin ernannt werden. 
 
