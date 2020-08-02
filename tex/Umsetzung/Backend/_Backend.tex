@@ -19,9 +19,7 @@ Ein Beispiel dafür ist \textit{Sequelize}\footnote{\url{https://sequelize.org/m
 Die Architektur des Back-Ends lässt sich durch das in Abbildung \vref{fig:Schichtenmodell} dargestellte Schichtenmodell beschreiben.
 Wird eine Anfrage an das Back-End gestellt, erfolgt zunächst die Authentifizierung des Benutzers.
 Dazu wird geprüft, ob dieser bereits angelegt wurde und ob der mitgegebene Token dem hinterlegten Token entspricht.
-Dadurch kann entschieden werden, ob die angefragte 
-%mitgegebene 
-Route benutzt werden darf. 
+Dadurch kann entschieden werden, ob die angefragte Route benutzt werden darf. 
 
 \begin{figure}[h]
 	\centering 
@@ -130,8 +128,6 @@ Für die Verifizierung des Passworts bei der Anmeldung eines Nutzers, muss das P
 Damit dieses nicht ausgelesen und für unberechtigten Zugang zu der Software genutzt werden kann, wird das Passwort als Hash-Wert gespeichert.
 Die Erstellung des Hash-Werts erfolgt mithilfe der Node.js-Bibliothek \textit{bcrypt}\footnote{\url{https://www.npmjs.com/package/bcrypt}}.
 Diese baut auf der kryptographische Hashfunktion bcrypt auf, welche speziell für das Hashen und Speichern von Passwörtern entwickelt wurde.
-%Dieser wird mithilfe der Node.js-Bibliothek \textit{bcrypt}\footnote{\url{https://www.npmjs.com/package/bcrypt}} erstellt.
-%Bcrypt ist eine kryptographische Hashfunktion speziell für Passwörter. 
 
 Um jedoch eine häufige Verwendung des Passworts zu vermeiden wird ein \textit{JSON Web Token}\footnote{\url{https://jwt.io/}} generiert, welcher ein genormtes Access-Token darstellt.
 Bei der Registrierung und Anmeldung eines Nutzers wird ein solcher Token ausgestellt, der bei anschließenden Anfragen an das Back-End mitgegeben wird.
