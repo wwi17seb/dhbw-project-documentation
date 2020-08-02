@@ -75,9 +75,11 @@ function handleAppointmentDelete(deleteAppointmentId, gapi) {
 
   request.execute(function (response) {
     if (response.error || response === false) {
-      showSnackbar('L\"oschen fehlgeschlagen. Neuladen der Seite erforderlich.', SEVERITY.ERROR);
+      showSnackbar('Loeschen fehlgeschlagen. 
+      Neuladen der Seite erforderlich.', SEVERITY.ERROR);
     } else {
-      showSnackbar('Vorlesung erfolgreich gel\"oscht.', SEVERITY.SUCCESS);
+      showSnackbar('Vorlesung erfolgreich geloescht.',
+      SEVERITY.SUCCESS);
     }
   });
 }
